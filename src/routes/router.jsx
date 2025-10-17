@@ -10,6 +10,7 @@ import MyApplication from "../page/MyApplication/MyApplication";
 import AddJob from "../page/AddJobs/AddJob";
 import AllJobs from "../page/AllJobs/AllJobs";
 import MyPostedJob from "../page/MyPostedJob/MyPostedJob";
+import ViewApplications from "../page/ViewApplications/ViewApplications";
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +62,16 @@ export const router = createBrowserRouter([
             <MyPostedJob />
           </PraiviteRoute>
         ),
+      },
+      {
+        path: "/applications/:job_id",
+        element: (
+          <PraiviteRoute>
+            <ViewApplications />
+          </PraiviteRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/applicaitons/job/${params.job_id}`),
       },
       {
         path: "/login",
