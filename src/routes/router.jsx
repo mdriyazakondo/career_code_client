@@ -7,6 +7,9 @@ import JobDetails from "../components/Home/JobDetails/JobDetails";
 import PraiviteRoute from "../PraiviteRoute/PraiviteRoute";
 import JobApplay from "../components/Home/JobApplay/JobApplay";
 import MyApplication from "../page/MyApplication/MyApplication";
+import AddJob from "../page/AddJobs/AddJob";
+import AllJobs from "../page/AllJobs/AllJobs";
+import MyPostedJob from "../page/MyPostedJob/MyPostedJob";
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +19,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/allJobs",
+        element: <AllJobs />,
       },
       {
         path: "/jobs/:id",
@@ -36,6 +43,22 @@ export const router = createBrowserRouter([
         element: (
           <PraiviteRoute>
             <MyApplication />
+          </PraiviteRoute>
+        ),
+      },
+      {
+        path: "/addJob",
+        element: (
+          <PraiviteRoute>
+            <AddJob />
+          </PraiviteRoute>
+        ),
+      },
+      {
+        path: "/myPostedJob",
+        element: (
+          <PraiviteRoute>
+            <MyPostedJob />
           </PraiviteRoute>
         ),
       },

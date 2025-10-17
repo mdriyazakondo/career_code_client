@@ -24,6 +24,10 @@ const Navbar = () => {
         {" "}
         <NavLink to={"/"}>Home</NavLink>
       </li>
+      <li>
+        {" "}
+        <NavLink to={"/allJobs"}>All Jobs</NavLink>
+      </li>
       {users && (
         <>
           <li>
@@ -31,14 +35,16 @@ const Navbar = () => {
           </li>
         </>
       )}
-      <li>
-        {" "}
-        <NavLink to={"/"}>Home</NavLink>
-      </li>
-      <li>
-        {" "}
-        <NavLink to={"/"}>Home</NavLink>
-      </li>
+      {users && (
+        <>
+          <li>
+            <NavLink to={"/addJob"}>Add Job</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/myPostedJob"}>My Posted Job</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
