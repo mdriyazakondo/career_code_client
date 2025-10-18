@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const JobList = ({ jobsApiByPromise }) => {
   const jobsList = use(jobsApiByPromise);
-  console.log(jobsList);
+
   return (
     <div className="max-w-[1500px] mx-auto my-20">
       {jobsList.length !== 0 ? (
@@ -19,7 +19,6 @@ const JobList = ({ jobsApiByPromise }) => {
                 <th>Deadline</th>
                 <th>count</th>
                 <th>View Application</th>
-           
               </tr>
             </thead>
             <tbody>
@@ -41,7 +40,6 @@ const JobList = ({ jobsApiByPromise }) => {
                   <td className="text-sm font-semibold text-gray-600 ">
                     <Link to={`/applications/${job?._id}`}>View Job</Link>
                   </td>
-                  
                 </tr>
               ))}
             </tbody>

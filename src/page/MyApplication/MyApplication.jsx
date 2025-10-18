@@ -11,7 +11,10 @@ const MyApplication = () => {
       <MyApplicationStats />
       <Suspense fallback={"loading....."}>
         <MyApplicationList
-          applicationPromise={applicationPromise(users.email)}
+          applicationPromise={applicationPromise(
+            users.email,
+            users.accessToken
+          )}
         />
       </Suspense>
     </div>
